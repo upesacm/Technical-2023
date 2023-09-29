@@ -1,11 +1,8 @@
 #include <stdio.h>
 #include <string.h>
-int main()
+int stringd(char str[])
 {
-	char str[1000];
-    printf("Enter the string you wanna check palindrome for:\n");
-    scanf("%s",&str);
-	int l = 0;
+    int l = 0;
 	int h = strlen(str) - 1;
 	while (h > l) {
 		if (str[l++] != str[h--]) {
@@ -14,5 +11,12 @@ int main()
 		}
 	}
 	printf("%s is a palindrome\n", str);
+}
+int main()
+{
+	char str[1000];
+    printf("Enter the string you wanna check palindrome for:\n");
+    scanf("%s",&str);
+    stringd(str);
 	return 0;
 }
