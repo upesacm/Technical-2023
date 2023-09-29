@@ -3,58 +3,60 @@
 
 int main()
 {
-    int ask,i,t,c=0;
+    int ask,i,j,temp,s;
     printf("Enter the number of elements : ");
     scanf("%i",&ask);
-    int a[ask];
+    int a[ask],in[ask];
     for(i = 0;i<ask;i++)
     {
+        in[i] = i;
         printf("Enter %i num : ",i+1);
         scanf("%i",&a[i]);
     }   
     for(i = 0;i<ask;i++)
     {
 
-        for(int j = 1;j<ask-i-1;i++)
+        for(j = i+1;j<ask;j++)
         {
-            if (a[0] > a[i])
+            if (a[i] > a[j])
             {
-                t = a[i];
-                a[i] = a[0];
-                a[0] = t;
-                c++;
+                a[i] = a[i] + a[j];
+                a[j] = a[i] - a[j];
+                a[i] = a[i] - a[j];
+
+                in[i] = in[i] + in[j];
+                in[j] = in[i] - in[j];
+                in[i] = in[i] - in[j];
             }
         }
-        if (c == 0)
+
+    }
+    printf("Enter what you want to search : ");
+    scanf("%i",&s);
+    
+    int l = 0,h = ask-1,m;
+    
+    while(l <= h)
+    {
+        m = (l + h)/2;
+        if(s == a[m])
         {
+            printf("The index of %i is %i \n",s,in[m]);
             break;
         }
-        c = 0;
-
+        else if(s > a[m])
+        {
+            l = m+1;
+        }
+        else
+        {
+            h = m-1;
+        }
     }
-    for(i = 0;i<ask;i++)
+    if(l>h)
     {
-        printf("%i ",a[i]);
+        printf("This is not in the list.\n");
     }
-    printf("\n");
-    // int se;
-    // printf("Enter the number you want to search : ");
-    // scanf("%i",&se);
-
-    // i = ask;
-    // while(1)
-    // {
-    //     if(se >= a[i/2])
-    //     {
-    //         i = i/2;
-    //         if(se == a[i])
-    //         {
-    //             printf("The location is %i of sorted array",i/2);
-    //         }
-    //         else if(se );
-    //     }
-
-
-    // }
-
+    
+    return 0;
 }
