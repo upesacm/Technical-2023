@@ -13,6 +13,7 @@ int main()
         printf("Enter %i num : ",i+1);
         scanf("%i",&a[i]);
     }   
+    //          Selection sort 
     for(i = 0;i<ask;i++)
     {
 
