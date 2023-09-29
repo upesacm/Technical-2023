@@ -16,13 +16,11 @@ int main()
             printf("This is not a palindrome.\n");
             break;
         }
-        else if(j == i/2-1)
-        {
-            printf("This is a palindrome.\n");
-        }
         else
         {
-            continue;
+            printf("This is a palindrome.\n");
+            break;
         }
+
     }
 }
