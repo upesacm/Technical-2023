@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main()
+{
+  int A[10],i,t,f=0,p;
+  printf("Enter array elements");
+  for(i=0;i<10;i++)
+  {
+    scanf("%d",&A[i]);
+  }
+  printf("Enter the target value");
+  scanf("%d",&t);
+  for(i=0;i<10;i++)
+  {
+    if(A[i]==t)
+    {
+    f=1;
+    p=i;
+  }}
+  if(f==1)
+  {
+    printf("Search Found\n");
+  printf("%d is index position",p);
+   }
+    else
+    printf("Not Found");
+  }
