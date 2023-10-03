@@ -7,8 +7,7 @@ int finder (int n, int arr[], int find, int low) {
     if (find == arr[mid]) {
         return mid;
     } else if (find > arr[mid]) {
-        low = mid + 1;
-        finder (n,arr,find,low);
+        finder (n,arr,find,mid + 1);
     } else {
         finder (mid,arr,find,low);
     }
