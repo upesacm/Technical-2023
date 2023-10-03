@@ -1,11 +1,20 @@
 #include<stdio.h>
 void main()
 {
-    int array[10]={96,79,88,155,100,87,99,8,69};   
-    int i, j,temp;
-    for (i = 0; i < 9; i++) 
+    int n;
+    printf("Enter the size of array:\n");
+    scanf("%d",&n);
+    int array[n];
+    for(int i=0; i<n;i++)
     {
-        for (j = 0; j < 9 - i - 1; j++) 
+        printf("Enter the %d element:\n",i+1);
+        scanf("%d",&array[i]);
+    }
+    //bubble sorting
+    int i, j,temp;
+    for (i = 0; i < n - 1; i++) 
+    {
+        for (j = 0; j < n - i - 1; j++) 
         {
             if (array[j] > array[j + 1])
             {
@@ -16,7 +25,7 @@ void main()
         }
     }
     printf("The sorted array is:\n");
-    for (int i = 0; i < 9; i++)
+    for (int i = 0; i < n; i++)
     {
         printf("%d\t",array[i]);
     }
