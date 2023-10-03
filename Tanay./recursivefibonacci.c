@@ -11,9 +11,13 @@ int fib(int n)
 {
 	if(n==0)
 	{
+		printf("0th term of fibonacci doesn't exist");
+	}
+	if(n==1)
+	{
 		return 0;
 	}
-	if(n==1||n==2)
+	if(n==2)
 	{
 		return 1;
 	}
