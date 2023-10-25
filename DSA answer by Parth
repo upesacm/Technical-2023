@@ -2,6 +2,7 @@
 #include<string.h>
 #include<stdlib.h>
 #include<conio.h>
+
 // Implement a linear search algorithm to find the index of a given element in an array.
 void linear_search()
 {
@@ -16,7 +17,7 @@ void linear_search()
 
   printf("Enter the element to find it index\n");
   scanf("%d",&n);
-  for(int i=0;i<7;i++)
+  for(int i=0;i<n;i++)
   {
     if(n==a[i])
     {
@@ -60,16 +61,16 @@ void number_of_v_and_c()
 }
 
 //Write a recursive function to generate the nth Fibonacci number.
-void fib(int x,int a,int b)
+int fib(int x)
 {
-  if(x)
-  {
-  printf("%d ",a);
-  a=a+b;
-  b=a-b;
-  x=x-1;
-  fib(x,a,b);
-  }  
+  int a;
+  if(x==1)
+  return 0;  
+  else if(x==2)
+  return 1;
+  else 
+  return fib(x-1)+fib(x-2);
+  
 }
 
 //Implement the bubble sort algorithm to sort an array of integers.
@@ -110,18 +111,22 @@ void bubbleSort()
 
 int main()
 {
-  int n;
+  int n,x;
   number_of_v_and_c();
   linear_search();
-  printf("How many terms of fibonacci series you want to print?\n");
-  scanf("%d",&n);
-  fib(n,0,1);
+  bubbleSort();
 
-  printf("Thank you %c\n",2);
+
+  printf("Which term of fibonacci series you want to print?\n");
+  scanf("%d",&n);
+  x=fib(n);
+  printf("%d ",x);
+
+  printf("\nThank you %c\n",2);
   getch();
   printf("\e[1;1H\e[2J");
 
-  bubbleSort();
+ 
   return 0;
 }
 
