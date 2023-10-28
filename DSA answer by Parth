@@ -1,0 +1,133 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<conio.h>
+
+// Implement a linear search algorithm to find the index of a given element in an array.
+void linear_search()
+{
+  int n,i;
+  printf("Please enter the size of the array\n");
+  scanf("%d",&n);
+  int a[n];
+
+  printf ("Please enter %d integers\n",n);
+  for(i=0;i<n;i++)
+  scanf("%d",&a[i]);
+
+  printf("Enter the element to find it index\n");
+  scanf("%d",&n);
+  for(int i=0;i<n;i++)
+  {
+    if(n==a[i])
+    {
+        printf("The index of %d is %d\n",n,i);
+        break;
+    }
+  }
+
+  printf("Thank you %c\n",2);
+
+  getch();
+  printf("\e[1;1H\e[2J");
+}
+
+//Write a program in C to count the number of vowels and consonants in a string
+void number_of_v_and_c()
+{
+  int i,j,v=0,c=0;
+  char str[100],x=2;
+  printf("Please enter the string\n");
+  fgets(str,100,stdin);
+
+  for(i=0;str[i];i++)
+  {
+    char ch = str[i];
+
+    if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') 
+    v++;
+    else if(ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U')
+    v++;
+    else
+    c++;
+  }
+
+    printf("Number of vowels in %sis %d\n",str,v);
+    printf("and number of consonants is %d\n",c-1);
+
+    printf("Thank you %c\n",x);
+    getch();
+    printf("\e[1;1H\e[2J");
+}
+
+//Write a recursive function to generate the nth Fibonacci number.
+int fib(int x)
+{
+  int a;
+  if(x==1)
+  return 0;  
+  else if(x==2)
+  return 1;
+  else 
+  return fib(x-1)+fib(x-2);
+  
+}
+
+//Implement the bubble sort algorithm to sort an array of integers.
+void bubbleSort()
+{
+    int i,j,num;char xx=2; 
+    
+    printf("\nPlease enter the number of elements in the array:\n");
+    scanf("%d",&num);
+    int arr[num];
+
+    printf("Enter %d integers:\n",num);
+
+    for (i=0;i<num;i++)
+    scanf("%d", &arr[i]);
+    for(i=0;i<num-1;i++)
+   {
+    for (j=0;j<num-1-i;j++) 
+    {
+        if (arr[j]>arr[j+1]) 
+        {
+            int temp = arr[j];
+            arr[j] = arr[j + 1];
+            arr[j + 1] = temp;
+        }
+    }
+  }
+
+    printf("Sorted array in ascending order:\n");
+
+    for (i=0;i<num;i++)
+    printf("%d ", arr[i]);
+
+    printf("\nThank you %c",xx);
+    getch();
+    printf("\e[1;1H\e[2J");
+}
+
+int main()
+{
+  int n,x;
+  number_of_v_and_c();
+  linear_search();
+  bubbleSort();
+
+
+  printf("Which term of fibonacci series you want to print?\n");
+  scanf("%d",&n);
+  x=fib(n);
+  printf("%d ",x);
+
+  printf("\nThank you %c\n",2);
+  getch();
+  printf("\e[1;1H\e[2J");
+
+ 
+  return 0;
+}
+
+
